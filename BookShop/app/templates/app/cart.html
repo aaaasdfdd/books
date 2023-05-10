@@ -1,0 +1,50 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+    <h1 class="my-4">Cart</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in order_items %}
+            <tr>
+                <td>{{ order_item.book.title }}</td>
+                <td>{{ order_item.book.author }}</td>
+                <td>${{ order_item.book.price }}</td>
+                <td>{{ order_item.quantity }}</td>
+                <td>${{ order_item.quantity|multiply:order_item.book.price }}</td>
+                <td>
+                    <a href="{% url 'remove_from_cart' order_item.book.id %}" class="btn btn-danger btn-sm">Remove</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="text-center">Your cart is empty.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if order_items %}
+    <form method="post" action="{% url 'apply_discount' %}" class="mb-3">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" class="form-control" name="code" placeholder="Discount code" {% if 'discount' in request.session %}value="{{ request.session.discount.code }}" readonly{% endif %} >
+            <button class="btn btn-outline-secondary" type="submit" {% if 'discount' in request.session %}disabled{% endif %}>Apply Discount</button>
+            {% if 'discount' in request.session %}
+                <a href="{% url 'remove_discount' %}" class="btn btn-outline-danger">Remove Discount</a>
+            {% endif %}
+        </div>
+    </form>
+    <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+    {% endif %}
+{% endblock %}

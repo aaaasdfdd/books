@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Welcome to Our Online Bookstore</h1>
+      <p>We are your one-stop shop for all your book needs. Browse through our vast collection of books and find your next favorite read.</p>
+    </div>
+
+    <div class="row">
+        {% for book in books %}
+        <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card">
+                {% if book.cover_image %}
+                    <img src="{{ book.cover_image }}" alt="{{ book.title }}">
+                {% else %}
+                    <img src="{% static 'app/img/default_cover.jpg' %}" alt="{{ book.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text">{{ book.author }}</p>
+                    <p class="card-text">Price: ${{ book.price }}</p>
+                    <a href="{% url 'book_detail' book.id %}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+    <h1 class="my-4">Order Confirmation</h1>
+    <p>Thank you for your order! Your order is now being processed.</p>
+    <h2 class="my-4">Order Summary</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_item in order_items %}
+            <tr>
+                <td>{{ order_item.book.title }}</td>
+                <td>{{ order_item.book.author }}</td>
+                <td>${{ order_item.book.price }}</td>
+                <td>{{ order_item.quantity }}</td>
+                <td>${{ order_item.quantity|multiply:order_item.book.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p><strong>Delivery Method:</strong> {{ order_delivery.delivery_method.name }}</p>
+    <p><strong>Delivery Address:</strong> {{ order_delivery.delivery_address }}</p>
+    <p><strong>Payment Method:</strong> {{ order_payment.payment_method.name }}</p>
+{% endblock %}

@@ -1,0 +1,92 @@
+[
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "description": "A dystopian novel about a totalitarian society",
+        "price": 12.99,
+        "image_url": "https://example.com/1984.jpg",
+        "follow_author": "https://twitter.com/Orwell",
+        "book_available": true
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "description": "A novel about racial injustice in the American South",
+        "price": 9.99,
+        "image_url": "https://example.com/mockingbird.jpg",
+        "follow_author": "https://twitter.com/HarperLee",
+        "book_available": true
+    },
+    {
+        "author": "Jane Austen",
+        "description": "A romantic novel set in Georgian England",
+        "price": 7.99,
+        "image_url": "https://example.com/pride.jpg",
+        "follow_author": "https://twitter.com/JaneAusten",
+        "book_available": true
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "description": "A novel about the decadence of the Roaring Twenties",
+        "price": 10.99,
+        "image_url": "https://example.com/gatsby.jpg",
+        "follow_author": "https://twitter.com/FScottFitz",
+        "book_available": true
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "description": "A novel about teenage angst and alienation",
+        "price": 8.99,
+        "image_url": "https://example.com/catcher.jpg",
+        "follow_author": "https://twitter.com/JDSalinger",
+        "book_available": true
+    },
+    {
+        "title": "Brave New World",
+        "author": "Aldous Huxley",
+        "description": "A dystopian novel about a future society controlled by drugs and technology",
+        "price": 11.99,
+        "image_url": "https://example.com/brave.jpg",
+        "follow_author": "https://twitter.com/Huxley",
+        "book_available": true
+    },
+    {
+        "title": "The Lord of the Rings",
+        "author": "J.R.R. Tolkien",
+        "description": "A high fantasy novel about a quest to destroy a powerful ring",
+        "price": 14.99,
+        "image_url": "https://example.com/lotr.jpg",
+        "follow_author": "https://twitter.com/Tolkien",
+        "book_available": true
+    },
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "description": "A comedic science fiction novel about a misfit group of space travelers",
+        "price": 9.99,
+        "image_url": "https://example.com/hitchhiker.jpg",
+"follow_author": "https://twitter.com/DouglasAdams",
+"book_available": true
+},
+{
+"title": "The Hobbit",
+"author": "J.R.R. Tolkien",
+"description": "A high fantasy novel about the adventures of hobbit Bilbo Baggins",
+"price": 8.99,
+"image_url": "https://example.com/hobbit.jpg",
+"follow_author": "https://twitter.com/Tolkien",
+"book_available": true
+},
+{
+"title": "Animal Farm",
+"author": "George Orwell",
+"description": "An allegorical novella about a group of farm animals who rebel against their human farmer",
+"price": 6.99,
+"image_url": "https://example.com/animalfarm.jpg",
+"follow_author": "https://twitter.com/Orwell",
+"book_available": true
+}
+]
+

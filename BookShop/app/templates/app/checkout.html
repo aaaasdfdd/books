@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block content %}
+    <h1 class="my-4">Checkout</h1>
+    <form method="post" action="{% url 'place_order' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="delivery_address" class="form-label">Delivery Address</label>
+            <textarea name="delivery_address" id="delivery_address" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="delivery_method" class="form-label">Delivery Method</label>
+            <select name="delivery_method" id="delivery_method" class="form-select" required>
+                {% for delivery_method in delivery_methods %}
+                <option value="{{ delivery_method.id }}">{{ delivery_method.name }} (${{ delivery_method.price }})</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="payment_method" class="form-label">Payment Method</label>
+            <select name="payment_method" id="payment_method" class="form-select" required>
+                {% for payment_method in payment_methods %}
+                <option value="{{ payment_method.id }}">{{ payment_method.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+{% endblock %}

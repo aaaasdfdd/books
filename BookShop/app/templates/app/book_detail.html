@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            {% if book.cover_image %}
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+            {% else %}
+                <img src="{% static 'app/img/default_cover.jpg' %}" alt="{{ book.title }}">
+            {% endif %}
+
+        </div>
+        <div class="col-md-6">
+            <h1>{{ book.title }}</h1>
+            <p>Author: {{ book.author }}</p>
+            <p>Price: ${{ book.price }}</p>
+            <p>Description: {{ book.description }}</p>
+            <a href="{% url 'add_to_cart' book.id %}" class="btn btn-primary">Add to Cart</a>
+        </div>
+    </div>
+{% endblock %}

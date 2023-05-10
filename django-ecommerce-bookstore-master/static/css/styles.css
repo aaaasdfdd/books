@@ -1,0 +1,29 @@
+.card-body {
+    /* existing styles */
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    transform: translateY(0);
+}
+
+.card-body:hover {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.card-text {
+    /* existing styles */
+    transition: opacity 0.2s ease-out;
+    opacity: 1;
+}
+
+.card-text:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    /* existing styles */
+    transition: transform 0.2s ease-out;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+}
